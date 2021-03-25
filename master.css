@@ -28,23 +28,6 @@ border: transparent;
 font-style: oblique;
 }
 
-#button{
-display: inline-block;
-background-color:#12cccc;
-color:#ffffff;
-border-radius: 5px;
-text-align:center;
-margin-top:2px;
-padding: 5px 15px;
-box-shadow: 1px 1px 2px #648c89;
-}
-
-#button:hover{
-cursor: pointer;
-opacity: .8;
-
-}
-
 ul {
   margin-top: 5px;
   padding-left: 20px;
@@ -61,7 +44,7 @@ ul li:nth-child(even){
   border-radius: 5px;
 }
 
-.strike{
+.title.strike {
   text-decoration: line-through;
 }
 

@@ -13,10 +13,29 @@
         <div class="container">
         <h2>To Do List.</h2>
         <ul>
-          <li v-for="todo in todos">
-            <span class="title">{{todo.title}}</span>
-            <span><i class="fas fa-check"></i></span>
-            <span><i class="fas fa-pen-fancy"></i></span>
+          <li v-for="(todo, i) in todosComputed">
+          <span class="title"
+            :class="(todo.status == 'done') ? 'strike' : '' ">
+            {{todo.title}}
+          </span>
+
+          <span
+            v-if="todo.status != 'done'"
+            class="controls check"
+            @click="check(todo)">
+            <i class="fas fa-check"></i>
+          </span>
+
+            <span v-if="todo.status != 'done'"
+            class="controls edit">
+            <i class="fas fa-pen-fancy"></i>
+          </span>
+
+            <span v-if="todo.status != 'done'"
+            class="controls remove"
+            @click="remove(i)">
+            <i class="fas fa-trash"></i>
+          </span>
           </li>
         </ul>
 
@@ -29,11 +48,7 @@
            @keyup.enter="add">
         </span>
 
-        <div id="button">Add</div>
-        <br>
-        <ul></ul>
         </div>
-
       </div>
 
         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
