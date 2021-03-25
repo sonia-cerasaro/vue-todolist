@@ -2,6 +2,7 @@ var app = new Vue({
     el: '#root',
     data: {
       inputText: '',
+      changedText: '',
       todos: [
         {
           title: 'Fare la spesa',
@@ -23,8 +24,8 @@ var app = new Vue({
     },
     computed: {
       todosComputed: function () {
-        let todosDone = this.todos.filter[(todo) => todo.status == 'done'];
-        let todosTodo = this.todos.filter[(todo) => todo.status == 'todo'];
+        let todosDone = this.todos.filter((todo) => todo.status == 'done');
+        let todosTodo = this.todos.filter((todo) => todo.status == 'todo');
         return [...todosTodo, ...todosDone];
       }
     },
@@ -39,11 +40,14 @@ var app = new Vue({
         this.inputText = '';
       }
     },
-    check: function (index) {
+    check: function (todo) {
+      let index = this.todos.indexOf(todo);
       this.todos[index].status = 'done';
     },
     remove: function (todo) {
       let index = this.todos.indexOf(todo);
-    }
+      this.todos.splice(index, 1);
+    },
+    modifyTask: 
   }
 });
