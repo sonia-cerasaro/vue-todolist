@@ -48,6 +48,5 @@ var app = new Vue({
       let index = this.todos.indexOf(todo);
       this.todos.splice(index, 1);
     },
-    modifyTask: 
   }
 });
