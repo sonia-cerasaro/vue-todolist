@@ -8,13 +8,25 @@
         <link rel="stylesheet" href="./master.css">
     </head>
     <body>
-      <div class="root">
+      <div id="root">
 
         <div class="container">
         <h2>To Do List.</h2>
+        <ul>
+          <li v-for="todo in todos">
+            <span class="title">{{todo.title}}</span>
+            <span><i class="fas fa-check"></i></span>
+            <span><i class="fas fa-pen-fancy"></i></span>
+          </li>
+        </ul>
 
         <span class="ToDoList">
-          <input type="text" name="ListItem" placeholder="...scrivi qui la tua lista...">
+          <input
+           v-model="inputText"
+           class="write"
+           type="text"
+           placeholder="...scrivi qui la tua lista..."
+           @keyup.enter="add">
         </span>
 
         <div id="button">Add</div>
@@ -22,11 +34,9 @@
         <ul></ul>
         </div>
 
-
-
       </div>
 
         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-        <script src="main.js"></script>
+        <script src="./main.js"></script>
     </body>
 </html>

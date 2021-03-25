@@ -65,6 +65,6 @@ ul li:nth-child(even){
   text-decoration: line-through;
 }
 
-li:hover{
+input:hover{
   cursor: pointer;
  }
